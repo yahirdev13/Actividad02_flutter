@@ -22,10 +22,13 @@ class _LoginState extends State<Recuperar> {
             Image.asset('assets/user.png', width: 200, height: 200),
             const SizedBox(height: 16.0),
             TextFormField(
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Correo Electrónico',
                 labelText: 'Correo Electrónico',
                 labelStyle: TextStyle(color: Colors.black),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
               keyboardType: TextInputType.emailAddress,
               controller: _email,

@@ -22,10 +22,13 @@ class _LoginState extends State<Login> {
             Image.asset('assets/user.png', width: 200, height: 200),
             const SizedBox(height: 16.0),
             TextFormField(
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Correo Electrónico',
                 labelText: 'Correo Electrónico',
-                labelStyle: TextStyle(color: Colors.black),
+                labelStyle: const TextStyle(color: Colors.black),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
               keyboardType: TextInputType.emailAddress,
               controller: _email,
@@ -44,6 +47,9 @@ class _LoginState extends State<Login> {
                     },
                     icon: Icon(
                         _isObscure ? Icons.visibility : Icons.visibility_off)),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
               controller: _password,
               obscureText: _isObscure,

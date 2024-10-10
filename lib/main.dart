@@ -2,6 +2,7 @@ import 'package:actividad_02/modules/auth/Login.dart';
 import 'package:actividad_02/modules/auth/Recuperar.dart';
 import 'package:actividad_02/modules/auth/Verificar.dart';
 import 'package:actividad_02/modules/auth/ResetPassword.dart';
+import 'package:actividad_02/widgets/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +18,11 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const Login(),
+        '/': (context) => const SplashScreen(),
+        '/login': (context) => const Login(),
         '/recuperar': (context) => const Recuperar(),
         '/verificar': (context) => const Verificar(),
-        '/ResetPassword': (context) => const ResetPassword(),
+        '/resetPassword': (context) => const ResetPassword(),
       },
     );
   }
