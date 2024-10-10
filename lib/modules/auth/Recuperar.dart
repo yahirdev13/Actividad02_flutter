@@ -9,8 +9,6 @@ class Recuperar extends StatefulWidget {
 
 class _LoginState extends State<Recuperar> {
   final TextEditingController _email = TextEditingController();
-  final TextEditingController _password = TextEditingController();
-  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {

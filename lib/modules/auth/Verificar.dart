@@ -8,9 +8,7 @@ class Verificar extends StatefulWidget {
 }
 
 class _LoginState extends State<Verificar> {
-  final TextEditingController _email = TextEditingController();
-  final TextEditingController _password = TextEditingController();
-  bool _isObscure = true;
+  final TextEditingController _codigo = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class _LoginState extends State<Verificar> {
                 ),
               ),
               keyboardType: TextInputType.number,
-              controller: _email,
+              controller: _codigo,
             ),
             const SizedBox(height: 48.0),
             SizedBox(
@@ -39,8 +37,7 @@ class _LoginState extends State<Verificar> {
               height: 48,
               child: ElevatedButton(
                 onPressed: () {
-                  print('Email: ${_email.text}');
-                  print('Password: ${_password.text}');
+                  print('Codigo: ${_codigo.text}');
                   Navigator.pushNamed(context, '/resetPassword');
                 },
                 style: OutlinedButton.styleFrom(
