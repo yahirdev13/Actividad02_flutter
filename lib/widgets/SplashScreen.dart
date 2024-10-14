@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         if (user != null) {
           print(user.uid);
           Navigator.pushReplacementNamed(
-              context, '/login'); //cambiar por pantalla menu jeje
+              context, '/perfil'); //cambiar por pantalla menu jeje
         } else {
           Navigator.pushReplacementNamed(context, '/login');
         }
