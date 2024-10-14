@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "974408287249",
+    "project_id": "restaurante-fadab",
+    "storage_bucket": "restaurante-fadab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974408287249:android:d6809d8f33770972ea5db0",
+        "android_client_info": {
+          "package_name": "com.example.actividad_02"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDq23HGeG-xKUHyAmPYK42od14sxkqs_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

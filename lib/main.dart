@@ -1,3 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 import 'package:actividad_02/modules/auth/Login.dart';
 import 'package:actividad_02/modules/auth/Recuperar.dart';
 import 'package:actividad_02/modules/auth/Verificar.dart';
@@ -5,7 +8,11 @@ import 'package:actividad_02/modules/auth/ResetPassword.dart';
 import 'package:actividad_02/widgets/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 
