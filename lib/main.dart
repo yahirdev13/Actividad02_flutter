@@ -1,3 +1,4 @@
+import 'package:actividad_02/modules/auth/Register.dart';
 import 'package:actividad_02/navigation/Profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -28,6 +29,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/login': (context) => const Login(),
+        '/register': (context) => const Register(),
         '/recuperar': (context) => const Recuperar(),
         '/verificar': (context) => const Verificar(),
         '/resetPassword': (context) => const ResetPassword(),
