@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -92,8 +93,28 @@ class _RegisterState extends State<Register> {
                   width: double.infinity,
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/profile');
+                    onPressed: () async {
+                      if (_password.text != _confirmPassword.text) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Las contraseñas no coinciden')),
+                        );
+                        return;
+                      }
+
+                      try {
+                        final credential = await FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                          email: _email.text,
+                          password: _password.text,
+                        );
+                        print("$credential");
+
+                        // Redirige a la pantalla de perfil después de un registro exitoso
+                        Navigator.pushNamed(context, '/profile');
+                      } on FirebaseAuthException catch (e) {
+                        print(e.message);
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 5, 80, 141),

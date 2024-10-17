@@ -12,6 +12,7 @@ class _LoginState extends State<Login> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   bool _isObscure = true;
+  String? _errorMessage; // Variable para almacenar el mensaje de error
 
   @override
   Widget build(BuildContext context) {
@@ -60,29 +61,43 @@ class _LoginState extends State<Login> {
                 obscureText: _isObscure,
               ),
               const SizedBox(height: 32.0),
+              if (_errorMessage !=
+                  null) // Mostrar el mensaje de error si no es nulo
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0),
+                  child: Text(
+                    _errorMessage!,
+                    style: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
               SizedBox(
                 width: double.infinity,
                 height: 48,
                 child: ElevatedButton(
                   onPressed: () async {
-                    print('Email: ${_email.text}');
-                    print('Password: ${_password.text}');
+                    setState(() {
+                      _errorMessage = null; // Reinicia el mensaje de error
+                    });
                     try {
                       final credential = await FirebaseAuth.instance
                           .signInWithEmailAndPassword(
                         email: _email.text,
                         password: _password.text,
                       );
-                      print("$credential");
-
-                      // Redirige a la pantalla de perfil después de un inicio de sesión exitoso
                       Navigator.pushNamed(context, '/profile');
                     } on FirebaseAuthException catch (e) {
-                      if (e.code == 'user-not-found') {
-                        print('No user found for that email.');
-                      } else if (e.code == 'wrong-password') {
-                        print('Wrong password provided for that user.');
-                      }
+                      setState(() {
+                        if (e.code == 'user-not-found') {
+                          _errorMessage = 'Correo electrónico no registrado.';
+                        } else if (e.code == 'wrong-password') {
+                          _errorMessage = 'Contraseña incorrecta.';
+                        } else {
+                          _errorMessage = 'Error al iniciar sesión.';
+                        }
+                      });
                     }
                   },
                   style: ElevatedButton.styleFrom(
