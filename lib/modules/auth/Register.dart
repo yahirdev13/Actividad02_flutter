@@ -108,9 +108,7 @@ class _RegisterState extends State<Register> {
                           email: _email.text,
                           password: _password.text,
                         );
-                        print("$credential");
 
-                        // Redirige a la pantalla de perfil después de un registro exitoso
                         Navigator.pushNamed(context, '/profile');
                       } on FirebaseAuthException catch (e) {
                         print(e.message);
@@ -135,6 +133,9 @@ class _RegisterState extends State<Register> {
                       onPressed: () {
                         Navigator.pushNamed(context, '/login');
                       },
+                      style: TextButton.styleFrom(
+                        foregroundColor: const Color.fromARGB(255, 5, 80, 141),
+                      ),
                       child: const Text('Iniciar Sesión'),
                     ),
                   ],

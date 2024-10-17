@@ -42,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const Row(
                 children: [
                   CircleAvatar(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: const Color.fromARGB(255, 5, 80, 141),
                     radius: 32,
                     child: Text('YA'),
                   ),
@@ -51,11 +51,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Yahird59@gmail.com",
+                        "cuenta@example.com",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "Yahir Alberto",
+                        "Username",
                         style: TextStyle(fontSize: 14),
                       ),
                     ],
