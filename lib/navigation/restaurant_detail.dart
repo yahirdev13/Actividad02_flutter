@@ -60,7 +60,7 @@ class RestaurantDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 restaurant.description,
-                style: const TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 14, color: Colors.grey),
               ),
             ),
             const Padding(
@@ -76,7 +76,7 @@ class RestaurantDetailScreen extends StatelessWidget {
                   Center(
                     child: Text(
                       "Todavía no hay comentarios equisde",
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(color: Colors.grey, fontSize: 14),
                     ),
                   ),
                 ],
