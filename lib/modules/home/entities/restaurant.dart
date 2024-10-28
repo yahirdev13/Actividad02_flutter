@@ -12,5 +12,5 @@ class Restaurant {
   String get description => _description;
   List<String> get images => _images;
   double get rating => _rating;
-  int get count => count;
+  int get count => _count;
 }
