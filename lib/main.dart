@@ -1,4 +1,5 @@
 import 'package:actividad_02/modules/auth/Register.dart';
+import 'package:actividad_02/navigation/Home.dart';
 import 'package:actividad_02/navigation/Profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -34,6 +35,7 @@ class MainApp extends StatelessWidget {
         '/verificar': (context) => const Verificar(),
         '/resetPassword': (context) => const ResetPassword(),
         '/profile': (context) => const ProfileScreen(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }

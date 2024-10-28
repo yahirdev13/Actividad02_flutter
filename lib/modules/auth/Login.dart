@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                         email: _email.text,
                         password: _password.text,
                       );
-                      Navigator.pushNamed(context, '/profile');
+                      Navigator.pushNamed(context, '/home');
                     } on FirebaseAuthException catch (e) {
                       setState(() {
                         if (e.code == 'user-not-found') {
