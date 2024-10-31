@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:actividad_02/modules/home/entities/restaurant.dart';
 
+//AIzaSyBRMfK6zDd0Mk9YNlK3q2j3b7a65G_-B6M - KEY global
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
