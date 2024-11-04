@@ -30,6 +30,8 @@ class HomeScreenState extends State<HomeScreen> {
           List<String>.from(doc.data()['images']),
           doc.data()['rating'].toDouble(),
           doc.data()['count'].toInt(),
+          doc.data()['latitude'].toDouble(),
+          doc.data()['longitude'].toDouble(),
         );
         newRestaurants.add(restaurant);
       }

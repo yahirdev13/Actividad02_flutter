@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:actividad_02/modules/home/entities/restaurant.dart';
 
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 class RestaurantDetailScreen extends StatelessWidget {
   final Restaurant restaurant;
 
@@ -82,6 +84,22 @@ class RestaurantDetailScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 300,
+              child: GoogleMap(
+                initialCameraPosition: CameraPosition(
+                  target: LatLng(restaurant.latitude, restaurant.longitude),
+                  zoom: 15,
+                ),
+                markers: {
+                  Marker(
+                    markerId: MarkerId(restaurant.name),
+                    position: LatLng(restaurant.latitude, restaurant.longitude),
+                    infoWindow: InfoWindow(title: restaurant.name),
+                  )
+                },
+              ),
+            )
           ],
         ),
       ),
