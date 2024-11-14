@@ -1,7 +1,9 @@
 import 'package:actividad_02/modules/auth/Register.dart';
+import 'package:actividad_02/modules/tutorial/tutorial.dart';
 import 'package:actividad_02/navigation/Home.dart';
 import 'package:actividad_02/navigation/Profile.dart';
 import 'package:actividad_02/navigation/map_sample.dart';
+import 'package:actividad_02/navigation/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -30,6 +32,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
+        '/navigation': (context) => const Navigation(),
         '/login': (context) => const Login(),
         '/register': (context) => const Register(),
         '/recuperar': (context) => const Recuperar(),
@@ -37,7 +40,8 @@ class MainApp extends StatelessWidget {
         '/resetPassword': (context) => const ResetPassword(),
         '/profile': (context) => const ProfileScreen(),
         '/home': (context) => const HomeScreen(),
-        '/map': (context) => const MapSample()
+        '/map': (context) => const MapSample(),
+        '/tutorial': (context) => const Tutorial(),
       },
     );
   }

@@ -49,16 +49,14 @@ class ListRestaurantData extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          restaurant.images.isNotEmpty
-                              ? Image.network(
-                                  restaurant.images[0],
-                                  width: 70,
-                                  height: 70,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return const Icon(Icons.error);
-                                  },
-                                )
-                              : const Icon(Icons.image_not_supported),
+                          Image.network(
+                            'https://placehold.co/50x50',
+                            width: 70,
+                            height: 70,
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Icon(Icons.error);
+                            },
+                          ),
                           const SizedBox(width: 8),
                           Expanded(
                             child: Column(
@@ -107,7 +105,6 @@ class ListRestaurantData extends StatelessWidget {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.amber,
         onPressed: () {
-          // Cambia esto a `pushReplacementNamed` si es necesario
           Navigator.pushNamed(context, '/home');
         },
         child: const Icon(Icons.home),
