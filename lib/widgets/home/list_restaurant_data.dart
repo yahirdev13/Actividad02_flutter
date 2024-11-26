@@ -51,8 +51,8 @@ class ListRestaurantData extends StatelessWidget {
                         children: [
                           Image.network(
                             'https://placehold.co/50x50',
-                            width: 70,
-                            height: 70,
+                            width: 50,
+                            height: 50,
                             errorBuilder: (context, error, stackTrace) {
                               return const Icon(Icons.error);
                             },
