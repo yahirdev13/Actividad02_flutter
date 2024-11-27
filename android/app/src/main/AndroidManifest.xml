@@ -9,13 +9,6 @@
         android:label="actividad_02"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <service
-            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBRMfK6zDd0Mk9YNlK3q2j3b7a65G_-B6M" />
         <activity
